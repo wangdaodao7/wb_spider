@@ -12,10 +12,7 @@ LOGIN_PASSWORD = '11111111a'
 
 login_url = 'https://passport.weibo.cn/sso/login'
 
-
 session = requests.Session()
-
-
 
 
 headers = {   
@@ -33,7 +30,6 @@ headers = {
     'Referer':'https://passport.weibo.cn/signin/login?entry=mweibo&r=http%3A%2F%2Fweibo.cn%2F&backTitle=%CE%A2%B2%A9&vt=',
     'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4399.400 QQBrowser/9.7.12777.400'
 }
-
 
 data = {
     'username': LOGIN_ID,
