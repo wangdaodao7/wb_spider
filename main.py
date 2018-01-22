@@ -1,3 +1,7 @@
+
+
+
+
 import json
 import re,time
 
@@ -12,15 +16,20 @@ session = requests.Session()
 
 
 def get_wb():
+    
+    #判断微博id是数字还是字母
     try:
         if int(TARGET_ID):
             url = 'https://weibo.cn/u/{TARGET_ID}?page={page_num}'
     except:
         url = 'https://weibo.cn/{TARGET_ID}?page={page_num}'
+
+    
     name = BeautifulSoup(session.get(url.format(
         TARGET_ID=TARGET_ID, page_num=1),).text, 'lxml').title.text
-    print(name, url.format(
-        TARGET_ID=TARGET_ID, page_num=1))
+    # print(name, url.format(
+    #     TARGET_ID=TARGET_ID, page_num=1))
+    #上面主要是过滤掉出错的情况    
     if len(name) == 2:
         print('###微博id出错!')
     else:
@@ -60,6 +69,7 @@ try:
     pattern = re.compile('class="ut">(.*?)<a')
     hello = re.search(pattern, response.text).group(1)
     print('登录成功.欢迎您:{0}！'.format(hello))
+    get_wb()
 except:   
     print('登录失败！问题是:{}。'.format(response.status_code))
 
