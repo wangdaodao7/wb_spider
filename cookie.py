@@ -8,24 +8,15 @@ import json
 from bs4 import BeautifulSoup
 from config import *
 
-
-
-
 login_url = 'https://passport.weibo.cn/sso/login'
-
 session = requests.Session()
-
-
 login = session.post(login_url, data=data, headers=headers)
 response = session.get('https://www.weibo.cn')
 
 
 def wb_session():
-
     if response.status_code == 200:
         tips = json.loads(login.text)
-        # print(tips)
-        # print(tips.get('retcode'))
         if tips.get('retcode') == 20000000:
             pattern = re.compile('class="ut">(.*?)<a')
             hello = re.search(pattern, response.text).group(1)
@@ -41,7 +32,4 @@ def wb_session():
             print(tips.get('msg'))
             return None
     else:
-        # print(response.text)
         print('登录失败！问题是:{}。'.format(response.status_code))
-
-
