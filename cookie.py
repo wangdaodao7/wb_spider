@@ -1,5 +1,3 @@
-#使用cookie登录
-
 
 import requests
 import lxml
@@ -13,6 +11,9 @@ session = requests.Session()
 login = session.post(login_url, data=data, headers=headers)
 response = session.get('https://www.weibo.cn')
 
+ 
+def check():
+    pass
 
 def wb_session():
     if response.status_code == 200:
