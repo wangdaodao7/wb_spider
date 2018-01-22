@@ -52,4 +52,4 @@ def get_wb_quanwen(key_url='comment/FzT85jc6j'):
     txt = soup.select('.ctt')[0].get_text()
     return txt
 
-session = wb_session()
+session = get_session()
