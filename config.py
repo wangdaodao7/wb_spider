@@ -1,15 +1,12 @@
-
-
-
 #登录用用户和密码
 LOGIN_ID = '13123824239'
-LOGIN_PASSWORD = '11111111a'
+LOGIN_PASSWORD = '11111111AB'
 
 #待爬取微博用户id
 TARGET_ID = 3816914843
 
 #爬取最大页数
-MAX_PAGES = 5
+MAX_PAGES = 50
 
 headers = {   
     'Accept':'*/*',
