@@ -17,7 +17,6 @@ def get_wb():
             url = 'https://weibo.cn/u/{TARGET_ID}?page={page_num}'
     except:
         url = 'https://weibo.cn/{TARGET_ID}?page={page_num}'
-
     name = BeautifulSoup(session.get(url.format(
         TARGET_ID=TARGET_ID, page_num=1),).text, 'lxml').title.text
     print(name, url.format(
@@ -43,7 +42,6 @@ def get_wb():
                                 '\n' + '-' * 20 + '\n'
                         except:
                             pass
-
                     print(tt)
                     code.write(tt)
 
@@ -56,22 +54,13 @@ def get_wb_quanwen(key_url='comment/FzT85jc6j'):
     txt = soup.select('.ctt')[0].get_text()
     return txt
 
-
-
-
-
 login = session.post(login_url, data=data, headers=headers)
 response = session.get('https://www.weibo.cn')
 try:
     pattern = re.compile('class="ut">(.*?)<a')
     hello = re.search(pattern, response.text).group(1)
-
     print('登录成功.欢迎您:{0}！'.format(hello))
-
-    
-
-except:
-    
+except:   
     print('登录失败！问题是:{}。'.format(response.status_code))
 
 
