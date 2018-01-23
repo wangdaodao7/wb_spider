@@ -23,13 +23,13 @@ def save_session():
             #保存cookie
             return session
         elif tips.get('retcode') == 50011015:
-            print('id', tips.get('msg'))
+            print('登录失败：', tips.get('msg'))
             return None
         elif tips.get('retcode') == 50011002:
-            print('password', tips.get('msg'))
+            print('登录失败：', tips.get('msg'))
             return None
         elif tips.get('retcode') == 50011005:
-            print(tips.get('msg'))
+            print('登录失败：', tips.get('msg'))
             return None
     else:
         print('登录失败！问题是:{}。'.format(response.status_code))
