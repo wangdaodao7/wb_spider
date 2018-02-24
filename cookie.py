@@ -11,8 +11,6 @@ session = requests.Session()
 login = session.post(login_url, data=data, headers=headers)
 response = session.get('https://www.weibo.cn')
 
-
-
 def save_session():
     if response.status_code == 200:
         tips = json.loads(login.text)
@@ -36,6 +34,8 @@ def save_session():
 
 
 
-def get_session():
-    if not os.path.exists('cookie'):
-        save_session()
+# def get_session():
+#     if not os.path.exists('cookie'):
+#         save_session()
+
+# print(save_session())
