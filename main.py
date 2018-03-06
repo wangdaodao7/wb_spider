@@ -9,7 +9,6 @@ from bs4 import BeautifulSoup
 from config import *
 from cookie import *
 
-
 def get_wb():
     try:
         if int(TARGET_ID):
