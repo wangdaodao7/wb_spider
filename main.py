@@ -19,7 +19,7 @@ def get_wb():
         TARGET_ID=TARGET_ID, page_num=1),).text, 'lxml').title.text
 
     if len(name) == 2:
-        print('###微博id出错!')
+        print('###待爬取的微博id出错!')
     else:
         with open('{}.txt'.format(name), 'w', encoding='utf-8') as code:
             for x in range(1, MAX_PAGES):

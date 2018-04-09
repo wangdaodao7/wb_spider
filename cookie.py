@@ -37,5 +37,3 @@ def save_session():
 # def get_session():
 #     if not os.path.exists('cookie'):
 #         save_session()
-
-# print(save_session())
