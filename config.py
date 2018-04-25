@@ -3,7 +3,7 @@ LOGIN_ID = '13123824239'
 LOGIN_PASSWORD = '11111111AB'
 
 #待爬取微博用户id
-TARGET_ID = '8799798'
+TARGET_ID = 'zhaowei'
 
 #爬取最大页数
 MAX_PAGES = 7
