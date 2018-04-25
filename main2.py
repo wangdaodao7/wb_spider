@@ -42,10 +42,6 @@ def get_weibo(page):
         yield tt
 
 
-
-
-
-
 def main(page_num=1):
     with open('1.txt', 'wb') as code:
         for x in get_weibo(page_num):
