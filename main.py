@@ -10,6 +10,8 @@ from config import *
 from cookie import *
 
 
+
+
 def get_wb(page):
     try:
         if int(TARGET_ID):
