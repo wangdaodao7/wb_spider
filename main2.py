@@ -42,15 +42,14 @@ def get_weibo(page):
         yield tt
 
 
+def save_weibo(name, content):
+    with open('{}.txt'.format(name), 'wb') as code:
+        code.write(content)
+    
 
 
-def main2():
-    pass
-
-def main(page_num=1):
-    with open('1.txt', 'wb') as code:
-        for x in get_weibo(page_num):
-            code.write(x)
+def main():
+    
 
 if __name__ == '__main__':
     pool = Pool()
