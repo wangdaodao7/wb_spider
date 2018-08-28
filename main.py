@@ -22,7 +22,8 @@ def get_wb(page):
         TARGET_ID=TARGET_ID, page_num=page),).text, 'lxml').title.text
 
     if len(name) == 2:
-        print('###待爬取的微博id出错!')
+        print('###待爬取的微博id出错,请检查!#######')
+        return None
     else:
         response = session.get(url.format(TARGET_ID=TARGET_ID, page_num=page))
         soup = BeautifulSoup(response.text, 'lxml')
@@ -40,7 +41,7 @@ def get_wb(page):
                 except:
                     pass
             print(tt)
-    return tt
+        return tt
 
 def get_wb_quanwen(key_url='comment/FzT85jc6j'):
     url = 'https://weibo.cn/' + key_url
@@ -51,4 +52,7 @@ def get_wb_quanwen(key_url='comment/FzT85jc6j'):
     return txt
 
 session = save_session()
+
+
+
 get_wb(2)
